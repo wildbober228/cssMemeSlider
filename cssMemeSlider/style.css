@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
 	background-color: #323639;
 }
@@ -13,10 +19,58 @@ body {
 }
 
 .slider {
+	position: relative;
+    width: 100%;
     overflow: hidden;
 }
 
-.slide img{
+.slides {
+	display: flex;
+    width: 100%;
+}
+
+.slides input {
+    display: none;
+}
+
+.slides img{
 	height: 37.5rem;
 	border-radius: 2rem;
+}
+
+
+/*---CONTROLS------*/
+.dots {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.dots label {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    border: solid #4440b8 0.3rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    margin: 0.7rem;
+}
+
+.dots label:hover {background: #fff;}
+
+.dots label:active {background: #fff;}
+
+.dots label:active:hover {background: #fff;}
+
+#radio-1:checked ~ .mem1 {
+    margin-left: 0;
+}
+#radio-2:checked ~ .mem2 {
+    margin-left: -100%;
+}
+#radio-3:checked ~ .mem3 {
+    margin-left: -200%;
+}
+#radio-4:checked ~ .mem4 {
+    margin-left: -300%;
 }
