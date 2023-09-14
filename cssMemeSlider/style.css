@@ -22,6 +22,7 @@ body {
 	position: relative;
     width: 100%;
     overflow: hidden;
+	margin-bottom: 20px;
 }
 
 .slides {
@@ -38,12 +39,30 @@ body {
 	border-radius: 2rem;
 }
 
+.control-panel {
+	display: flex;
+	justify-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.caption-list {
+	display: flex;
+    width: 7%;
+	overflow: hidden;
+}
+
+.caption {
+	width: 100%;
+}
+
 
 /*---CONTROLS------*/
 .dots {
     display: flex;
     justify-content: center;
-    margin: 1rem;
 }
 
 .dots label {
@@ -53,7 +72,11 @@ body {
     border: solid #4440b8 0.3rem;
     cursor: pointer;
     transition: all 0.15s ease;
-    margin: 0.7rem;
+	margin-right: 1rem;
+}
+
+.dots label:last-child {
+	margin-right: 0rem;
 }
 
 .dots label:hover {background: #fff;}
@@ -65,6 +88,7 @@ body {
 #radio-1:checked ~ .mem1 {
     margin-left: 0;
 }
+
 #radio-2:checked ~ .mem2 {
     margin-left: -100%;
 }
