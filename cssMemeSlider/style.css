@@ -1,0 +1,22 @@
+body {
+	background-color: #323639;
+}
+
+.container {
+	padding: 3rem;
+}
+
+.slider-wrapper {
+    position: relative;
+	margin: 0 auto;
+	max-width: 1024px;
+}
+
+.slider {
+    overflow: hidden;
+}
+
+.slide img{
+	height: 37.5rem;
+	border-radius: 2rem;
+}
