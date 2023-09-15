@@ -21,22 +21,24 @@ body {
 .slider {
 	position: relative;
     width: 100%;
-    overflow: hidden;
-	margin-bottom: 20px;
+    overflow: hidden; 
+	
 }
 
 .slides {
 	display: flex;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .slides input {
-    display: none;
+     display: none; 
 }
 
 .slides img{
 	height: 37.5rem;
 	border-radius: 2rem;
+    transition: all 0.65s ease; 
 }
 
 .control-panel {
@@ -50,8 +52,8 @@ body {
 
 .caption-list {
 	display: flex;
-    width: 7%;
-	overflow: hidden;
+    width: 80%;
+	overflow: hidden; 
 }
 
 .caption {
@@ -69,7 +71,8 @@ body {
     height: 2rem;
     width: 2rem;
     border-radius: 50%;
-    border: solid #4440b8 0.3rem;
+    border: solid #5c58cb 0.3rem;
+    background-color: #5c58cb;
     cursor: pointer;
     transition: all 0.15s ease;
 	margin-right: 1rem;
@@ -79,11 +82,25 @@ body {
 	margin-right: 0rem;
 }
 
-.dots label:hover {background: #fff;}
+.dots label:hover {background-color: #fff; border: solid #FFF}
 
-.dots label:active {background: #fff;}
+.slider :has(#radio-1:checked) + .control-panel .dots .dot1 {
+    background-color: transparent;
+}
 
-.dots label:active:hover {background: #fff;}
+.slider :has(#radio-2:checked) + .control-panel .dots .dot2 {
+    background-color: transparent;
+}
+
+.slider :has(#radio-3:checked) + .control-panel .dots .dot3 {
+    background-color: transparent;
+}
+
+.slider :has(#radio-4:checked) + .control-panel .dots .dot4 {
+    background-color: transparent;
+}
+
+/*scroll logic*/
 
 #radio-1:checked ~ .mem1 {
     margin-left: 0;
@@ -97,4 +114,40 @@ body {
 }
 #radio-4:checked ~ .mem4 {
     margin-left: -300%;
+}
+
+.slider :has(#radio-1:checked) + .control-panel .caption-list #caption-1 {
+    display: contents;
+    transform: translatex(0);
+}
+
+.slider :has(#radio-1:checked) + .control-panel .caption-list #caption-2, #caption-3 , #caption-4 {
+    display: none;
+}
+
+.slider :has(#radio-2:checked) + .control-panel .caption-list #caption-2 {
+    display: contents;
+    transform: translatex(-100%);
+}
+
+.slider :has(#radio-2:checked) + .control-panel .caption-list #caption-1, #caption-3 , #caption-4 {
+    display: none;
+}
+
+.slider :has(#radio-3:checked) + .control-panel .caption-list #caption-3 {
+    display: contents;
+    transform: translatex(-200%);
+ }
+
+ .slider :has(#radio-3:checked) + .control-panel .caption-list #caption-1, #caption-2 , #caption-4 {
+    display: none;
+}
+
+ .slider :has(#radio-4:checked) + .control-panel .caption-list #caption-4 {
+    display: contents;
+    transform: translatex(-300%);
+ }
+
+ .slider :has(#radio-4:checked) + .control-panel .caption-list #caption-1, #caption-3 , #caption-2 {
+    display: none;
 }
